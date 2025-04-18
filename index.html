@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator in button</title>
+</head>
+
+<body>
+
+    <div class="form">
+        <input type="text" name="text1" id="text1"> <br><br>
+        <input type="text" name="text2" id="text2"> <br><br>
+
+        <select name="">
+            <option value="Addition">Addition</option>
+            <option value="Subtraction">Subtraction</option>
+            <option value="Multiplication">Multiplication</option>
+            <option value="Division">Division</option>
+            <option value="Moduls">Moduls</option>
+        </select> <br><br>
+
+        <button id="btn">Calculate</button><br><br>
+        <p></p>
+    </div>
+
+    <script>
+        let result;
+        let text1 = document.querySelector("#text1");
+        let text2 = document.querySelector("#text2");
+
+        let operations = document.querySelector("select");
+        let btn = document.querySelector("#btn");
+        let para = document.querySelector("p");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault()
+            switch (operations.value) {
+                case "Addition": {
+                    result = Number(text1.value) + Number(text2.value);
+                    para.innerHTML = result;
+                } break;
+                case "Subtraction": {
+                    result = Number(text1.value) - Number(text2.value);
+                    para.innerHTML = result;
+                } break;
+                case "Multiplication": {
+                    result = Number(text1.value) * Number(text2.value);
+                    para.innerHTML = result;
+                } break;
+                case "Division": {
+                    result = Number(text1.value) / Number(text2.value);
+                    para.innerHTML = result;
+                } break;
+                case "Moduls": {
+                    result = Number(text1.value) % Number(text2.value);
+                    para.innerHTML = result;
+                } break;
+                default: {
+                    result = ("Fill the right number");
+                    para.innerHTML = result;
+
+                }
+            }
+        })
+    </Script>
+    
+</body >
+</html >
